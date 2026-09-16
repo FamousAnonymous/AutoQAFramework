@@ -1,0 +1,98 @@
+var banner = document.getElementById('banner');
+var legal = document.getElementById('roll-cta');
+
+var tl = gsap.timeline({repeat:0, repeatDelay:1.9});
+gsap.defaults({
+  ease:Quad.easeInOut,
+  force3D:false,
+  duration:0.5
+});
+
+window.onload = function() {	
+    const el = document.body.querySelectorAll('.js-split-text');
+    el.forEach(function (el, index) {
+        el.innerHTML = el.textContent.split("").map(letter =>
+            `<span class=letter>${letter}</span>`
+        ).join ("");
+    });
+
+  tl.set(banner, {visibility: "visible"})
+
+	/*frame one*/
+	.from(".dell-logo, .cta-1", .3, { autoAlpha:0}, "frame1")
+    .from(".bundle-txt-f1, .f1-pro", { x:"130%"}, "frame1")		
+	.from(".badge1 .letter", .3,  {autoAlpha: 0, ease: 'Sine.easeIn', stagger: 0.01}, "frame1+=.5")			
+	.from(".title1 .letter", .3,  {autoAlpha: 0, ease: 'Sine.easeIn', stagger: 0.01}, "frame1+=.5")
+	.from(".bundle-txt-f1", { autoAlpha:0}, "frame1+=.5")	
+	.to(".badge1, .title1, .bundle-txt-f1",   {autoAlpha: 0}, "frame1+=2.5")
+	.to(".f1-pro, .dell-logo, .cta-1", .3, {autoAlpha:0}, "frame1+=2.7")
+	.to(".bg-f1", .3, {ease: Power4.easeOut, height:"100%"}, "frame1+=2.75")			
+
+	/*frame two*/
+	.add("frame2","frame1+=3")
+	.set(".f2-img",  {autoAlpha:1}, "frame2")
+	.set(".f2-bgdown",  {autoAlpha:1, height:"100%"}, "frame2")
+	.to(".f2-bgdown", {ease: Power4.easeOut, height:"27%"}, "frame2")	
+	.from(".bundle-txt-f2, .cta-2",  { autoAlpha:0}, "frame2+=.5")
+	.to(".bundle-txt-f2",   {autoAlpha: 0}, "frame2+=2.5")
+	.to(".bg-f1", .3, {autoAlpha:0, ease: Power4.easeOut, height:"100%"}, "frame2+=2.7")		
+	.to(".f2-img, .f2-bgdown, .cta-2",  {autoAlpha: 0}, "frame2+=2.7")
+
+
+	/*frame three*/
+	.add("frame3","frame2+=3")
+	.from(".f3-bg", .3,  {autoAlpha:0}, "frame3")
+	.to(".cta-1", .3, {autoAlpha:1}, "frame3")	
+	.from(".bundle-txt-f3",  { autoAlpha:0}, "frame3+=.5")
+	.to(".bundle-txt-f3",   {autoAlpha: 0}, "frame3+=2.5")	
+    .from(".f3-pro", .75, { x:"150%", y:"-150%", ease: Power4.easeOut}, "frame3+=.5")	
+	.from(".title3", .3,  {autoAlpha: 0, ease: 'Sine.easeIn', stagger: 0.01}, "frame3+=.3")	
+	.to(".title3",   {autoAlpha: 0}, "frame3+=2.5")	
+	.to(".f3-bg, .f3-pro, .cta-1",   {autoAlpha: 0}, "frame3+=2.5")
+
+	/*frame four*/
+	.add("frame4","frame3+=3")
+	.to(".cta-2", .3, {autoAlpha:1}, "frame4")	
+	.set(".f4-img",  {autoAlpha:1}, "frame4")
+	.set(".f4-bgdown",  {autoAlpha:1, height:"100%"}, "frame4")
+	.to(".f4-bgdown", {ease: Power4.easeOut, height:"27%"}, "frame4")	
+	.from(".bundle-txt-f4",  { autoAlpha:0}, "frame4+=.5")
+	.to(".bundle-txt-f4", .3,  {autoAlpha: 0}, "frame4+=2.5")
+	.to(".f4-img, .cta-2",  {autoAlpha: 0}, "frame4+=2.7")
+	.to(".f4-bgdown",  {autoAlpha: 0}, "frame4+=2.7")	
+	
+	/*frame five*/
+	.add("frame5","frame4+=3")
+	.from(".bg-f5", {autoAlpha: 0}, "frame5")
+	.to(".dell-logo, .cta-1", .3, { autoAlpha:1}, "frame5")
+    .from(".bundle-txt-f5", { autoAlpha: 0}, "frame5+=.5")		
+    .from(".f5-pro", { x:"150%"}, "frame5")		
+	.from(".badge5 .letter", .3,  {autoAlpha: 0, ease: 'Sine.easeIn', stagger: 0.01}, "frame5+=.5")			
+	.from(".title5 .letter", .3,  {autoAlpha: 0, ease: 'Sine.easeIn', stagger: 0.01}, "frame5+=.5")	
+
+
+	/*roll over*/
+  .from("#roll-cta",  {autoAlpha:0, x:"100%"}, "frame5+=.5")
+  .from("#rolltext",  {autoAlpha:0}, "frame5+=.5")
+  .from("#legal-text",  {autoAlpha:0}, "frame5+=.5")
+
+	legal.addEventListener("mouseover",legalHover);
+	function legalHover(){
+		tl.pause();
+		gsap.to("#legal", .5, {top:0, ease:Power1.easeOut})  
+	}
+
+	legal.addEventListener("mouseout",legalOut);
+	function legalOut(){
+		tl.play();
+		gsap.to("#legal", .5, {top:"-120%", ease:Power1.easeIn})
+	}
+
+;
+
+//	tl.pause(8)
+	var currentDuration = tl.duration();
+	var repeatDelay  = tl.repeatDelay();
+	console.log(currentDuration + repeatDelay); 
+
+};

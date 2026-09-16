@@ -1,0 +1,248 @@
+/*-------------------------------------
+  Reset
+---------------------------------------*/
+
+/******Basic settings**********/
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+img{
+  border: 0;
+image-rendering: -webkit-optimize-contrast;
+/* Webkit (Chrome/Safari) */
+image-rendering: crisp-edges;
+/* Firefox */
+}
+a{
+  text-decoration: none;
+}
+body{
+  font-family: 'Roboto', sans-serif; color: #FFFFFF;
+}
+sup {
+  vertical-align: .5em;
+  line-height: 0;
+}
+.font-preloader{
+  font-family:'Roboto';
+  font-weight:300;
+  visibility:hidden;
+  width:0;
+  height:0;
+}
+#frame_one,#frame_two,#frame_three {
+  width: 100%;
+  height: 100%;
+}
+
+
+/*-------------------------------------
+  Layout
+---------------------------------------*/
+
+#ad {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 100%;
+  height: 100%;
+  font-size: 1.03093vw;
+}
+
+#banner {
+  position: absolute;
+  background: #0672CB;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+#clickTAG {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+#border {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  border: 1px solid #eee;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.sr-only {
+	visibility: hidden;
+}
+
+/*-------------------------------------
+  Frame One frame duration: 3s
+---------------------------------------*/
+.left-border{
+  position: absolute;
+  width: auto;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9;	
+  clip-path: inset(0% 90% 0% 0%);
+
+}
+
+.right-border{
+  position: absolute;
+  width: auto;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: 9;	
+  clip-path: inset(0% 0% 0% 90%);
+}
+
+.img-f1, .img-f2, .img-f3, .img-f4, .img-f5{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+
+.title1, .title2, .title3, .title4, .title5, .cta{
+  position: absolute;
+  font-size: 2.8em;
+  line-height: 1.2em;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.010em;
+  white-space: nowrap;
+  color: #fff;
+  left: 6.4%;
+  top: 47%;
+  transform: translateY(-50%);
+  }
+
+
+.dell-logo{
+  position: absolute;
+  width: 25.2em;
+  height: auto;
+  right: 5.65%;
+  transform: translateY(-50%);
+  top: 50%;
+  z-index: 1;
+}
+
+
+
+/*-------------------------------------
+  Frame two  frame duration: 3s
+---------------------------------------*/
+.title2{
+  left: 8.75%;
+  }
+
+
+/*-------------------------------------
+  Frame three  frame duration: 3s
+---------------------------------------*/
+.title3{
+  left: 6.7%;
+  }
+/*-------------------------------------
+  Frame four  frame duration: 3s
+---------------------------------------*/
+.title4{
+  left: 4.5%;
+  }
+
+/*-------------------------------------
+  Frame five  frame duration: 3s
+---------------------------------------*/
+
+
+.ai-logo-box{
+  position: absolute;
+  width: 27.6em;
+  height: 11em;
+  left: 14.65%;
+  transform: translateY(-50%);	
+  top: 50%;
+  z-index: 1;
+  clip: rect(0em,27.6em,11em,0em);		
+}
+
+.ai-txt{
+  position: absolute;
+  width: 27.6em;
+  height: 11em;
+  left: 50%;
+  transform: translate(-50%, -50%);	
+  top: 50%;
+}
+
+.ai-logo-box2{
+  position: absolute;
+  width: 27.6em;
+  height: 11em;
+  left: 14.65%;
+  transform: translateY(-50%);	
+  top: 50%;
+  z-index: 1;
+}
+
+.ilb-logo{
+  position: absolute;
+  width: 4.4em;
+  height: auto;
+  top: 0;
+  left: 0;
+
+}
+.irb-logo{
+  position: absolute;
+  width: 4.4em;
+  height: auto;
+  top: 0;	
+  right: 0;
+
+}
+
+.title5{
+    font-size: 2.45em;
+    left: 68.5%;
+    top: 43.5%;
+  }
+
+.cta{
+    font-size: 2.0em;
+    left: 62%;
+    top: 57.5%;
+  }
+

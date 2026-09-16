@@ -1,0 +1,12 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^if \\(Test-Path -LiteralPath 'D:\\\\demoProjects\\\\playwright-typescript-playwright-test-main\\\\README\\.md'\\) \\{ Write-Output 'README\\.md still exists' \\} else \\{ Write-Output 'README\\.md removed' \\}; if \\(Test-Path -LiteralPath 'D:\\\\demoProjects\\\\playwright-typescript-playwright-test-main\\\\ReadMeImages'\\) \\{ Write-Output 'ReadMeImages folder still exists' \\} else \\{ Write-Output 'ReadMeImages folder removed' \\}$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^if \\(Test-Path -LiteralPath 'D:\\\\demoProjects\\\\playwright-typescript-playwright-test-main\\\\eslint\\.config\\.js'\\) \\{ Write-Output 'eslint\\.config\\.js still exists' \\} else \\{ Write-Output 'eslint\\.config\\.js removed' \\}$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}

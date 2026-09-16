@@ -1,0 +1,48 @@
+{
+  "name": "autoqa-framework",
+  "version": "1.0.0",
+  "description": "AutoQA Framework:End-to-End Test Automation using Playwright and TypeScript",
+  "main": "index.js",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "test:qa": "cross-env ENV=qa npx playwright test",
+    "test:dev": "cross-env ENV=dev npx playwright test",
+    "test": "cross-env ENV=%ENV% npx playwright test",
+    "test:single": "cross-env ENV=%ENV% npx playwright test tests/functional/Interactions.test.ts --project=Chrome",
+    "test:single:qa": "cross-env ENV=qa npx playwright test tests/functional/Interactions.test.ts --project=Chrome",
+    "test:single:dev": "cross-env ENV=dev npx playwright test tests/functional/Interactions.test.ts --project=Chrome",
+    "test:parallel": "cross-env ENV=%ENV% npx playwright test --grep @Smoke --project=Chrome",
+    "test:parallel:qa": "cross-env ENV=qa npx playwright test --grep @Smoke --project=Chrome",
+    "test:parallel:dev": "cross-env ENV=dev npx playwright test --grep @Smoke --project=Chrome",
+    "test:serial": "cross-env ENV=%ENV% npx playwright test --grep @Smoke --workers=1 --project=Chrome",
+    "test:serial:qa": "cross-env ENV=qa npx playwright test --grep @Smoke --workers=1 --project=Chrome",
+    "test:serial:dev": "cross-env ENV=dev npx playwright test --grep @Smoke --workers=1 --project=Chrome",
+    "test:ui": "cross-env ENV=%ENV% npx playwright test tests/functional --project=Chrome",
+    "test:ui:qa": "cross-env ENV=qa npx playwright test tests/functional --project=Chrome",
+    "test:ui:dev": "cross-env ENV=dev npx playwright test tests/functional --project=Chrome",
+    "test:api": "cross-env ENV=%ENV% npx playwright test --grep @API --workers=1 --project=API",
+    "test:api:qa": "cross-env ENV=qa npx playwright test --grep @API --workers=1 --project=API",
+    "test:api:dev": "cross-env ENV=dev npx playwright test --grep @API --workers=1 --project=API",
+    "test:record": "npx playwright codegen",
+    "allureReport": "allure serve"
+  },
+  "author": "Pradeep Kumar H N",
+  "dependencies": {
+    "@playwright/test": "^1.60.0",
+    "@types/crypto-js": "^4.2.2",
+    "allure-playwright": "^3.8.0",
+    "cross-env": "^10.1.0",
+    "crypto-js": "^4.2.0",
+    "ortoni-report": "^4.10.0",
+    "typescript": "^6.0.3",
+    "winston": "^3.19.0"
+  },
+  "allowScripts": {
+    "sqlite3@5.1.7": true
+  },
+  "devDependencies": {
+    "allure-commandline": "^2.43.0"
+  }
+}

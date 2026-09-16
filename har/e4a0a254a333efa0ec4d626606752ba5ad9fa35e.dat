@@ -1,0 +1,75 @@
+var banner = document.getElementById('banner');
+var legal = document.getElementById('roll-cta');
+
+var tl = gsap.timeline({repeat:0});
+gsap.defaults({
+  ease:Quad.easeInOut,
+  force3D:false,
+  duration:0.3
+});
+
+window.onload = function() {	
+    const el = document.body.querySelectorAll('.js-split-text');
+    el.forEach(function (el, index) {
+        el.innerHTML = el.textContent.split("").map(letter =>
+            `<span class=letter>${letter}</span>`
+        ).join ("");
+    });
+
+  tl.set(banner, {visibility: "visible"})
+
+	/*frame one*/	
+	.from(".dell-logo", .75 , {autoAlpha: 0}, "frame1+=.15")
+	.from(".left-border", .6, { clipPath: "inset(50% 80% 50% 0)", ease: "none"}, "frame1")
+	.to(".left-border", .4, { clipPath: "inset(0% 0% 0% 0%)", ease: "none"}, "frame1+=.6")
+    .from(".right-border", .6, { clipPath: "inset(50% 0% 50% 80%)", ease: "none"}, "frame1")
+	.to(".right-border", .4, { clipPath: "inset(0% 0% 0% 0%)", ease: "none"}, "frame1+=.6")	
+    .from(".title1", .75, {autoAlpha: 0}, "frame1+=.15")		
+	.to(".dell-logo, .title1", .5, { autoAlpha:0}, "frame1+=3.5")
+
+
+
+	/*frame two*/
+	.add("frame2","frame1+=3.5")
+    .from(".img-f2", {autoAlpha:0}, "frame2")
+	.from(".title2", {autoAlpha: 0}, "frame2+=.3")	
+	.to(".title2",  {autoAlpha:0}, "frame2+=3.5")	
+	.to(".img-f2",  {autoAlpha:0,}, "frame2+=3.75")
+
+	/*frame three*/
+	.add("frame3","frame2+=3.5")
+    .from(".img-f3", {autoAlpha:0}, "frame3")
+	.from(".title3", {autoAlpha: 0}, "frame3+=.3")	
+	.to(".title3",  {autoAlpha:0}, "frame3+=3.5")	
+	.to(".img-f3",  {autoAlpha:0,}, "frame3+=3.75")
+	
+	/*frame four*/
+	.add("frame4","frame3+=3.5")
+    .from(".img-f4", {autoAlpha:0}, "frame4")
+	.from(".title4", {autoAlpha: 0}, "frame4+=.3")	
+	.to(".title4",  {autoAlpha:0}, "frame4+=2.7")	
+	.to(".img-f4",  {autoAlpha:0,}, "frame4+=3.25")
+	
+
+	/*frame five*/
+	.add("frame5","frame4+=3")	
+    .from(".img-f5", {autoAlpha:0}, "frame5")
+	.from(".ai-logo-box2", {autoAlpha:0}, "frame5")	
+    .from(".ai-logo-box",.6, {clip:"rect(0em,13.7em,11em,13.7em)"}, "frame5+=.58")			
+	.from(".ilb-logo", {x:"230%"}, "frame5+=.5")	
+    .from(".irb-logo", {x:"-230%"}, "frame5+=.5")
+	.from(".title5", {autoAlpha:0}, "frame5+=.5")
+	.from(".cta", {autoAlpha:0}, "frame5+=.5")
+	
+
+
+
+
+;
+
+//	tl.pause(14)	
+	var currentDuration = tl.duration();
+	var repeatDelay  = tl.repeatDelay();
+	console.log(currentDuration + repeatDelay); 
+
+};

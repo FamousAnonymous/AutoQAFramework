@@ -1,0 +1,242 @@
+/*-------------------------------------
+  Reset
+---------------------------------------*/
+
+/******Basic settings**********/
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+img{
+  border: 0;
+image-rendering: -webkit-optimize-contrast;
+/* Webkit (Chrome/Safari) */
+image-rendering: crisp-edges;
+/* Firefox */
+}
+a{
+  text-decoration: none;
+}
+body{
+  font-family: 'Roboto', sans-serif; color: #FFFFFF;
+}
+sup {
+  vertical-align: .5em;
+  line-height: 0;
+}
+.font-preloader{
+  font-family:'Roboto';
+  font-weight:300;
+  visibility:hidden;
+  width:0;
+  height:0;
+}
+#frame_one,#frame_two,#frame_three,#frame_four,#frame_five {
+  width: 100%;
+  height: 100%;
+}
+
+
+/*-------------------------------------
+  Layout
+---------------------------------------*/
+
+#ad {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 100%;
+  height: 100%;
+  font-size: 4vh;
+}
+
+#banner {
+  position: absolute;
+  background: #0672CB;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+#clickTAG {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+#border {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  border: 1px solid #eee;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.sr-only {
+	visibility: hidden;
+}
+
+/*-------------------------------------
+  Frame One frame duration: 3s
+---------------------------------------*/
+
+.left-border{
+  position: absolute;
+  width: auto;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  clip-path: inset(0% 85% 0% 0%);
+}
+
+.right-border{
+  position: absolute;
+  width: auto;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: 9;	
+  clip-path: inset(0% 0% 0% 85%);
+}
+
+
+.img-f1, .img-f2, .img-f3, .img-f4, .img-f5{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+
+.title1, .title2, .title3, .title4, .title5, .cta{
+  position: absolute;
+  font-size: 1.6em;
+  line-height: 1.18em;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  color: #fff;
+  top: 42.5%;
+  width: 100%;
+  }
+
+
+
+.dell-logo{
+  position: absolute;
+  width: 20.8em;
+  height: auto;
+  left: 50%;
+  transform: translateX(-50%);	
+  bottom: 10.75%;
+}
+
+
+
+
+/*-------------------------------------
+  Frame two  frame duration: 3s
+---------------------------------------*/
+
+
+/*-------------------------------------
+  Frame three  frame duration: 3s
+---------------------------------------*/
+
+/*-------------------------------------
+  Frame four  frame duration: 3s
+---------------------------------------*/
+	
+
+/*-------------------------------------
+  Frame five  frame duration: 3s
+---------------------------------------*/
+
+.title5{
+
+font-size: 1.25em;
+
+top: 57.5%;
+
+}
+
+.cta{
+
+font-size: 1em;
+font-weight: 500;
+top: 68.5%;
+
+}
+
+
+.ai-logo-box{
+  position: absolute;
+  width: 14em;
+  height: 5.6em;
+  left: 50.2%;
+  transform: translateX(-50%);
+  top: 30%;
+  z-index: 1;
+  clip: rect(0em,14em,6em,0em);
+}
+
+.ai-logo-box2{
+  position: absolute;
+  width: 14em;
+  height: 5.6em;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 30%;
+  z-index: 1;
+}
+ .ai-logo, .ai-txt{
+  position: absolute;
+  width: 14em;
+  height: 5.6em;
+  left: 50%;
+  transform: translateX(-50%);	
+  z-index: 1;
+
+}
+.ilb-logo{
+  position: absolute;
+  width: 2.2em;
+  height: auto;
+  left: 0;
+  top: 0;
+}
+.irb-logo{
+  position: absolute;
+  width: 2.2em;
+  height: auto;
+  right: 0;
+  top: 0;
+}

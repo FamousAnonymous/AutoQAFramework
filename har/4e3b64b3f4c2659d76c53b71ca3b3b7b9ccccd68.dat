@@ -1,0 +1,9 @@
+
+
+try{__tagObject_callback_1789551984478893({ImpressionID:"fc18d4aef9fb42dfbcc09a8bf3038555",ServerPublicDns:"tpsc-ae1.doubleverify.com"});}catch(e){}
+try{$dvbs.pubSub.publish("BeforeDecisionRender","fc18d4aef9fb42dfbcc09a8bf3038555");}catch(e){}
+try{__verify_callback_1789551984478893({
+ResultID:2,
+Passback:"",
+ServerContext:{"fd":{"researchCollection":{"adid":"-4046522886222050803","d9":"3658259561767602418,-5488740230212662710","d13":"20260916","icat":"false","d12":"false","exti":"3753476526","d2":"0.05","crad":"false","tapt":"12","d14":"","d1":"10","impi":"fc18d4aef9fb42dfbcc09a8bf3038555","dety":"1","d3":"rc20260909","urti":"1284","doha":"-7258372688527317439","d6":""},"common":{"isBsAllow":"true"},"isBsAllow":true},"ce":{"ddt":1,"dt":1}}});}catch(e){}
+try{$dvbs.pubSub.publish("AfterDecisionRender","fc18d4aef9fb42dfbcc09a8bf3038555");}catch(e){}

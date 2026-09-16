@@ -1,0 +1,415 @@
+/*-------------------------------------
+  Reset
+---------------------------------------*/
+
+/******Basic settings**********/
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+img{
+  border: 0;
+  image-rendering: -webkit-optimize-contrast;
+  /* Webkit (Chrome/Safari) */
+  image-rendering: crisp-edges;
+  /* Firefox */
+}
+a{
+  text-decoration: none;
+}
+body{
+  font-family: 'Roboto', sans-serif; color: #000;
+}
+sup {
+  vertical-align: .5em;
+  line-height: 0;
+  font-size: .7em;
+}
+.font-preloader{
+  font-family:'Roboto';
+  font-weight:300;
+  visibility:hidden;
+  width:0;
+  height:0;
+}
+#frame_one,#frame_two,#frame_three,#frame_four,#frame_five {
+  width: 100%;
+  height: 100%;
+}
+
+/*-------------------------------------
+  Layout
+---------------------------------------*/
+
+#ad {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 100%;
+  height: 100%;
+  font-size: 4vh;
+}
+
+#banner {
+  position: absolute;
+  background: #f0f0f0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+#clickTAG {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+#border {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  border: 1px solid #808080;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.sr-only {
+  visibility: hidden;
+}
+
+/*-------------------------------------
+  Frame One frame duration: 3s
+---------------------------------------*/
+.bg-f1, .bg-f5{
+  position: absolute;
+  /* background: #f0f0f0; */
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+
+.f1-pro{
+    position: absolute;
+    /*    width: 18.7em;*/
+    height: auto;
+    left: 71%;
+    top: 50.8%;
+    transform: translate(-50%, -50%);
+}
+.content-txt-f1, .content-txt-f5{
+	position: absolute;
+    width: 18em;
+    height: 12em;
+    top: 35.6%;
+    left: -6%;
+    overflow: hidden;
+}
+
+ .badge1, .badge5 {
+  position: absolute;	
+  font-size: 1.2em;
+  line-height: 1em;
+  font-weight: 700;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.100em;		
+  color: #000;
+  left: 0%;
+  top: 0%;	 
+	 z-index: 99;
+  }
+
+
+.title1, .title5{position: absolute;font-size: 1.8em;line-height: 1.1em;font-weight: 300;text-align: center;color: #000;left: 0%;top: 2%;}
+
+.title5 {
+    top: 16%;
+}
+
+
+.dell-logo{
+  position: absolute;
+  width: 13.9em;
+  height: auto;
+  top: 8%;
+  left: 4.667%;
+  z-index: 1;	
+}
+.bundle-txt-f1, .bundle-txt-f5 {
+position: absolute;
+    width: 18em;
+    height: 10.6em;
+    left: 4.667%;
+    bottom: 2%;
+}
+.funding-text-block, .funding-text-block5{
+    position: absolute;
+    width:5.5 7.5em;
+    height: 5.4em;
+    left: 0;
+    bottom: 0;
+}
+.funding-logo, .funding-logo5 {position: absolute;/* width: 7.5em; */height: auto;bottom: 26%;z-index: 1;}
+.funding-text, .funding-text5{
+    position: absolute;
+    width: 100%;
+    font-size: .7em;
+    line-height: 1.1em;
+    font-weight: 400;
+    text-align: center;
+    color: #000;
+    left: 0;
+    bottom: 0;
+  }
+
+
+.sc-txt-f1, .sc-txt-f5 {
+    position: absolute;
+    font-size: 1.2em;
+    line-height: 1.2em;
+    font-weight: 300;
+    text-align: left;
+    color: #000;
+    left: 0;
+    top: 0;
+}
+
+.proname-txt-f1, .proname-txt-f5 {position: absolute;font-size: 1.2em;line-height: 1.2em;font-weight: 500;text-align: left;color: #000;left: 0;top: 20%;}
+
+.cta-1, .cta-2{
+position: absolute;
+    background: #0672cb;
+    color: #fff;
+    border: #0672cb 1px solid;
+    text-align: center;
+    right: 4%;
+    bottom: 4.5%;
+    display: block;
+    padding: 0.6em 1.1em 0.5em 1.1em;
+    font-size: 1.4em;
+    line-height: 1em;
+    letter-spacing: 0.03em;
+    font-weight: 700;
+    white-space: nowrap;
+    vertical-align: middle;
+    z-index: 9;
+}
+
+/*-------------------------------------
+  Frame two  frame duration: 3s
+---------------------------------------*/
+ .f2-img,  .f4-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 30%;
+  opacity: 0;
+}
+
+.f2-bgdown, .f4-bgdown{
+  position: absolute;
+  width: 100%;
+  height: 26.8%;
+  background: #f0f0f0;	
+  left: 0;
+  bottom: 0;
+  opacity: 0;
+}
+
+.bundle-txt-f2, .bundle-txt-f3, .bundle-txt-f4 {
+    position: absolute;
+    width: 20em;
+    height: 5em;
+    left: 6.33%;
+    bottom: 0px;
+}
+
+.sc-txt-f2, .sc-txt-f4 {
+position: absolute;
+    font-size: 1.5em;
+    line-height: 1.2em;
+    font-weight: 300;
+    text-align: left;
+    color: #000;
+    left: 0;
+    bottom: 61%;
+}
+
+.proname-txt-f2, .proname-txt-f4 {
+    position: absolute;
+    font-size: 1.2em;
+    line-height: 1.2em;
+    font-weight: 500;
+    text-align: left;
+	color: #000;
+    left: 0;
+    top: 46%;
+}
+.cta-2{
+	position: absolute;
+    background: #0672cb;
+    color: #fff;
+    border: #0672cb 1px solid;
+}
+
+
+/*-------------------------------------
+  Frame Three frame duration: 3s
+---------------------------------------*/
+
+.f3-bg{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* background: #f0f0f0; */
+  top: 0;
+  left: 0;
+}
+
+.f3-pro{
+    position: absolute;
+    width: 24em;
+    height: auto;
+    left: 50%;
+    top: 51%;
+    transform: translate(-50%, -50%);
+}
+
+.title3{
+    position: absolute;
+    font-size: 1.8em;
+    line-height: 1.2em;
+    font-weight: 300;
+    text-align: center;
+    color: #000;
+    top: 5%;
+    width: 100%;
+    left: 0;
+  }
+
+.sc-txt-f3{
+position: absolute;
+    font-size: 1.5em;
+    line-height: 1.2em;
+    font-weight: 300;
+    text-align: left;
+    color: #000;
+    left: 0;
+    bottom: 17%;
+}
+
+.proname-txt-f3 {
+    position: absolute;
+    font-size: 1.2em;
+    line-height: 1.2em;
+    font-weight: 500;
+    text-align: left;
+    color: #000;
+    left: 0;
+    top: 51%;
+}
+/*-------------------------------------
+  Frame four frame duration: 3s
+---------------------------------------*/
+
+
+/*-------------------------------------
+  Frame five frame duration: 3s
+---------------------------------------*/
+ 
+.f5-pro{
+	position: absolute;
+	/* width: 16.2em; */
+	height: auto;
+	left: 74.5%;
+	top: 44%;
+	transform: translate(-50%, -50%);
+}
+
+.content-txt-f5{
+	position: absolute;
+    width: 18em;
+    height: 12em;
+    top: 33.5%;
+    left: 4.1%;
+    overflow: hidden;
+}
+
+/*Roll over*/
+
+#legal-cont {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+	
+}
+
+#roll-cta {
+  position: absolute;
+top: 76.5%;
+  left: 75%;
+  z-index: 99999;
+  width: 6em;
+  height: 1em;
+}
+#legal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background:#fff;
+  top:-100em;
+  z-index: 99;
+}
+#legal-text {
+  position: absolute;
+  color: #000;
+  width: 100%;
+  height: 100%;
+  font-size: .8em;
+  line-height: 1.2em;
+  text-align: left;
+  padding: 1.5em 1em;
+}
+#rolltext {
+  color: #fff;
+  position: absolute;
+  z-index: 9;
+  width: 6em;
+  height: 1em;
+  height: auto;
+top: 76.5%;
+  left: 75%;
+  font-size: 1em;
+  text-align: right;
+  white-space: nowrap;
+} 

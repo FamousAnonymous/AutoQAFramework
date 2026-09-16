@@ -1,0 +1,23 @@
+[
+    { "companyName": "Accenture", "link": "https://www.accenture.com", "logo": "/img/logos/accenture.png", "dark": true, "weight": "standard" },
+    { "companyName": "Adidas", "link": "https://www.adidas.com", "logo": "/img/logos/adidas.png", "dark": true, "weight": "hero" },
+    { "companyName": "Adobe", "link": "https://www.adobe.com", "logo": "/img/logos/adobe.png", "weight": "hero" },
+    { "companyName": "Builder.io", "link": "https://www.builder.io", "logo": "/img/logos/builder.svg", "weight": "small" },
+    { "companyName": "Capgemini", "link": "https://www.capgemini.com", "logo": "/img/logos/capgemini.png", "weight": "standard" },
+    { "companyName": "Cisco", "link": "https://www.cisco.com", "logo": "/img/logos/cisco.png", "weight": "hero" },
+    { "companyName": "Coca-Cola", "link": "https://www.coca-cola.com", "logo": "/img/logos/coco-cola.png", "weight": "hero" },
+    { "companyName": "Cognizant", "link": "https://www.cognizant.com", "logo": "/img/logos/cognizant.svg", "dark": true, "weight": "standard" },
+    { "companyName": "Confluent", "link": "https://www.confluent.io", "logo": "/img/logos/confluent.png", "weight": "small" },
+    { "companyName": "Datadog", "link": "https://www.datadoghq.com", "logo": "/img/logos/datadog.svg", "weight": "standard" },
+    { "companyName": "Deloitte", "link": "https://www2.deloitte.com", "logo": "/img/logos/deloitte.svg", "weight": "standard" },
+    { "companyName": "EPAM", "link": "https://www.epam.com", "logo": "/img/logos/epam.svg", "dark": true, "weight": "small" },
+    { "companyName": "IBM", "link": "https://www.ibm.com", "logo": "/img/logos/ibm.png", "weight": "hero" },
+    { "companyName": "Lloyds Banking Group", "link": "https://www.lloydsbank.com/", "logo": "/img/logos/lloydsbanking.png", "weight": "standard" },
+    { "companyName": "Mastercard", "link": "https://www.mastercard.com", "logo": "/img/logos/mastercard.svg", "weight": "hero" },
+    { "companyName": "Microsoft", "link": "https://www.microsoft.com", "logo": "/img/logos/microsoft.png", "weight": "hero" },
+    { "companyName": "Sainsbury's", "link": "https://www.sainsburys.co.uk", "logo": "/img/logos/sainsburys.png", "weight": "standard" },
+    { "companyName": "Salesforce", "link": "https://www.salesforce.com", "logo": "/img/logos/salesforce.png", "weight": "hero" },
+    { "companyName": "Siemens", "link": "https://www.siemens.com", "logo": "/img/logos/siemens.png", "weight": "standard" },
+    { "companyName": "UK Health Security Agency", "link": "https://www.gov.uk/government/organisations/uk-health-security-agency", "logo": "/img/logos/uk-health.svg", "dark": true, "weight": "small" },
+    { "companyName": "Vodafone", "link": "https://www.vodafone.com", "logo": "/img/logos/vodafone.png", "weight": "standard" }
+]
