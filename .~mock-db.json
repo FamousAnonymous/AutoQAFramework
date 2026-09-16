@@ -89,24 +89,6 @@
         "state": "WA",
         "zipCode": "98101"
       }
-    },
-    {
-      "firstName": "Olivia",
-      "lastName": "Taylor",
-      "email": "olivia.taylor@company.com",
-      "phone": "+1-555-0110",
-      "department": "Engineering",
-      "position": "QA Automation Engineer",
-      "salary": 81000,
-      "hireDate": "2024-02-12",
-      "status": "active",
-      "address": {
-        "street": "890 Cedar Ave",
-        "city": "Denver",
-        "state": "CO",
-        "zipCode": "80202"
-      },
-      "id": 6
     }
   ],
   "departments": [

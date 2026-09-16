@@ -26,7 +26,7 @@ The available test environments are defined in [`testConfig.ts`](./testConfig.ts
 | --- | --- |
 | `qa` | `https://demoqa.com` |
 | `dev` | Not configured |
-| `qaApi` | `http://localhost:3000` |
+| `qaApi` | `http://127.0.0.1:3000` |
 | `devApi` | Not configured |
 
 Set the `ENV` variable before running tests. The default environment is `qa`.
@@ -64,7 +64,9 @@ $env:ENV = "qaApi"
 npm run test:api:qa
 ```
 
-Start the local JSON Server in another terminal before running the API tests:
+`test:api:qa` starts the local JSON Server automatically, waits for port 3000,
+runs the tests, and stops the server when the run finishes. To start the server
+manually for development, use:
 
 ```powershell
 npm run mock:server
@@ -79,16 +81,16 @@ Start the local mock API with:
 npm run mock:server
 ```
 
-The server runs at `http://localhost:3000` and exposes REST endpoints for the
+The server runs at `http://127.0.0.1:3000` and exposes REST endpoints for the
 top-level collections in the JSON file:
 
 ```text
-GET    http://localhost:3000/employees
-GET    http://localhost:3000/employees/1
-POST   http://localhost:3000/employees
-PUT    http://localhost:3000/employees/1
-PATCH  http://localhost:3000/employees/1
-DELETE http://localhost:3000/employees/1
+GET    http://127.0.0.1:3000/employees
+GET    http://127.0.0.1:3000/employees/1
+POST   http://127.0.0.1:3000/employees
+PUT    http://127.0.0.1:3000/employees/1
+PATCH  http://127.0.0.1:3000/employees/1
+DELETE http://127.0.0.1:3000/employees/1
 ```
 
 Changes made through POST, PUT, PATCH, or DELETE are written back to
@@ -96,7 +98,7 @@ Changes made through POST, PUT, PATCH, or DELETE are written back to
 
 The `test:api:qa` command runs both API suites in one Playwright invocation:
 
-- Local CRUD tests against `qaApi` (`http://localhost:3000`)
+- Local CRUD tests against `qaApi` (`http://127.0.0.1:3000`)
 - Swagger Book Store tests against `qa` (`https://demoqa.com`)
 
 The local CRUD API tests cover:
@@ -178,6 +180,10 @@ The workflow in [`.github/workflows/playwright.yml`](./.github/workflows/playwri
 3. Runs UI tests against `qa`.
 4. Starts the local JSON Server and runs API tests against `qaApi`.
 5. Uploads the generated HTML report as a workflow artifact.
+
+Slack notifications are not configured. Slack is a messaging and collaboration
+service; a Slack webhook would allow GitHub Actions to post test results to a
+Slack channel. This project does not use that integration.
 
 ## Useful commands
 
