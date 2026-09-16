@@ -23,8 +23,9 @@
     "test:ui:qa": "cross-env ENV=qa npx playwright test tests/functional --project=Chrome",
     "test:ui:dev": "cross-env ENV=dev npx playwright test tests/functional --project=Chrome",
     "test:api": "cross-env ENV=%ENV% npx playwright test --grep @API --workers=1 --project=API",
-    "test:api:qa": "cross-env ENV=qa npx playwright test --grep @API --workers=1 --project=API",
+    "test:api:qa": "npx playwright test tests/api --workers=1 --project=API --project=SwaggerAPI",
     "test:api:dev": "cross-env ENV=dev npx playwright test --grep @API --workers=1 --project=API",
+    "mock:server": "json-server --watch mock-db.json --port 3000",
     "test:record": "npx playwright codegen",
     "allureReport": "allure serve"
   },
@@ -43,6 +44,8 @@
     "sqlite3@5.1.7": true
   },
   "devDependencies": {
-    "allure-commandline": "^2.43.0"
+    "allure-commandline": "^2.43.0",
+    "json-server": "^0.17.4",
+    "start-server-and-test": "^3.0.12"
   }
 }

@@ -46,12 +46,16 @@ jobs:
           ENV: "qa"
           CI: true
 
-      # Run API tests against the API environment.
-      - name: Run API tests
-        run: npm run test:api
+      # Start the local JSON Server for API tests.
+      - name: Start local mock API
+        run: npm run mock:server > mock-server.log 2>&1 &
         env:
-          ENV: "qaApi"
-          REQRES_API_KEY: ${{ secrets.REQRES_API_KEY }}
+          CI: true
+
+      # Run API tests against the local API environment.
+      - name: Run API tests
+        run: npm run test:api:qa
+        env:
           CI: true
 
       # Step to wait for the job to complete

@@ -1,14 +1,9 @@
-import fs from 'fs';
 import { APIResponse, expect } from '@playwright/test';
 
 export class APIActions {
 
     getReqResHeaders(): Record<string, string> {
-        const apiKey = process.env.REQRES_API_KEY;
-        if (!apiKey) {
-            throw new Error(`REQRES_API_KEY is required because ReqRes now expects an x-api-key header.`);
-        }
-        return { 'x-api-key': apiKey };
+        return { 'Content-Type': `application/json` };
     }
 
     async verifyStatusCode(response: APIResponse): Promise<void> {
@@ -38,10 +33,7 @@ export class APIActions {
         const actualHeaders = new Set(responsePart.map(header => header.name.trim().toLowerCase()));
         const missingHeaders = expectedHeaders.filter(header => !actualHeaders.has(header));
 
-        expect(missingHeaders, `${missingHeaders.join(`, `)} was not present in ${responseType}`).toEqual([]);
+        expect(missingHeaders, `${missingHeaders.join(', ')} was not present in ${responseType}`).toEqual([]);
     }
 
-    async readValuesFromTextFile(fileName: string): Promise<string> {
-        return fs.readFileSync(`./utils/api/${fileName}.txt`, `utf8`);
-    }
 }

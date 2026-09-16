@@ -86,9 +86,16 @@ const config: PlaywrightTestConfig = {
     })),
     {
       name: `API`,
-      testMatch: `**/tests/api/**/*.test.ts`,
+      testMatch: `**/tests/api/MockCrud.test.ts`,
       use: {
-        baseURL: testConfig[currentEnvironment]
+        baseURL: testConfig.qaApi
+      }
+    },
+    {
+      name: `SwaggerAPI`,
+      testMatch: `**/tests/api/SwaggerBookStore.test.ts`,
+      use: {
+        baseURL: testConfig.qa
       }
     }
   ],

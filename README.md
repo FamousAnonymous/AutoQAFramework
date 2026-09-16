@@ -7,7 +7,7 @@ Playwright and TypeScript test automation framework for UI and API testing.
 - Node.js 20 or later
 - npm
 - Google Chrome, Firefox, and WebKit browsers for Playwright
-- A ReqRes API key for API tests
+- A local JSON Server for API tests
 
 ## Installation
 
@@ -26,23 +26,10 @@ The available test environments are defined in [`testConfig.ts`](./testConfig.ts
 | --- | --- |
 | `qa` | `https://demoqa.com` |
 | `dev` | Not configured |
-| `qaApi` | `https://reqres.in` |
+| `qaApi` | `http://localhost:3000` |
 | `devApi` | Not configured |
 
 Set the `ENV` variable before running tests. The default environment is `qa`.
-
-### ReqRes API key
-
-ReqRes requires an `x-api-key` header for the API tests. Set `REQRES_API_KEY` in your local shell using a key created in the [ReqRes console](https://app.reqres.in/console).
-
-PowerShell:
-
-```powershell
-$env:REQRES_API_KEY = "<your-reqres-api-key>"
-$env:ENV = "qaApi"
-```
-
-Do not commit API keys or add them directly to source files. In GitHub Actions, configure a repository secret named `REQRES_API_KEY`; the workflow passes that secret to the API test step.
 
 ## Running tests
 
@@ -74,14 +61,55 @@ npx playwright test tests/functional --project=WebKit
 
 ```powershell
 $env:ENV = "qaApi"
-$env:REQRES_API_KEY = "<your-reqres-api-key>"
-npm run test:api
+npm run test:api:qa
 ```
 
-API tests run serially against ReqRes and currently cover:
+Start the local JSON Server in another terminal before running the API tests:
 
-- `GET /api/users?per_page=1`
-- `POST /api/users`
+```powershell
+npm run mock:server
+```
+
+### Local mock API
+
+The project includes a JSON Server database in [`mock-db.json`](./mock-db.json).
+Start the local mock API with:
+
+```powershell
+npm run mock:server
+```
+
+The server runs at `http://localhost:3000` and exposes REST endpoints for the
+top-level collections in the JSON file:
+
+```text
+GET    http://localhost:3000/employees
+GET    http://localhost:3000/employees/1
+POST   http://localhost:3000/employees
+PUT    http://localhost:3000/employees/1
+PATCH  http://localhost:3000/employees/1
+DELETE http://localhost:3000/employees/1
+```
+
+Changes made through POST, PUT, PATCH, or DELETE are written back to
+`mock-db.json`.
+
+The `test:api:qa` command runs both API suites in one Playwright invocation:
+
+- Local CRUD tests against `qaApi` (`http://localhost:3000`)
+- Swagger Book Store tests against `qa` (`https://demoqa.com`)
+
+The local CRUD API tests cover:
+
+- `GET /employees`
+- `GET /employees/:id`
+- `POST /employees`
+- `PUT /employees/:id`
+- `PATCH /employees/:id`
+- `DELETE /employees/:id`
+
+The Swagger API tests cover the DemoQA Book Store API and temporary-user book
+management flow.
 
 ### A single UI test file
 
@@ -133,7 +161,7 @@ The generated reports and test artifacts are ignored by Git.
 .
 ├── .github/workflows/playwright.yml  # GitHub Actions workflow
 ├── lib/                              # Shared UI, API, and base-test helpers
-├── tests/api/                         # ReqRes API tests
+├── tests/api/                         # Local mock and Swagger API tests
 ├── tests/functional/                  # DemoQA UI tests
 ├── utils/api/                         # Expected API request and response values
 ├── playwright.config.ts               # Playwright projects and reporters
@@ -148,7 +176,7 @@ The workflow in [`.github/workflows/playwright.yml`](./.github/workflows/playwri
 1. Installs Node.js 20 and project dependencies.
 2. Installs Chrome for Playwright.
 3. Runs UI tests against `qa`.
-4. Runs API tests against `qaApi` using the `REQRES_API_KEY` repository secret.
+4. Starts the local JSON Server and runs API tests against `qaApi`.
 5. Uploads the generated HTML report as a workflow artifact.
 
 ## Useful commands

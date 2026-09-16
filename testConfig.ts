@@ -1,7 +1,7 @@
 export const testConfig = {
     qa: `https://demoqa.com`,
     dev: ``,
-    qaApi: `https://reqres.in`,
+    qaApi: `http://localhost:3000`,
     devApi: ``,
     username: `demouat@gmail.com`,
     password: `U2FsdGVkX18/eMdsOJpvI4hJZ/w7hNgwSRFaDvAcZx4=`,
