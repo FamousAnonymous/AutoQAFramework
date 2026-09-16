@@ -1,0 +1,9 @@
+
+
+try{__tagObject_callback_122674487633({ImpressionID:"a42099fc915f48cdbe6106e86e871b6e",ServerPublicDns:"tpsc-ae1.doubleverify.com"});}catch(e){}
+try{$dvbs.pubSub.publish("BeforeDecisionRender","a42099fc915f48cdbe6106e86e871b6e");}catch(e){}
+try{__verify_callback_122674487633({
+ResultID:1,
+Passback:"%3Ca%20href%3D%22https%3A%2F%2Fwww.pathtosuccess.global%22%20target%3D%22_blank%22%3E%3Cimg%20src%3D%22https%3A%2F%2Fcdn.pathtosuccess.global%2FDV_GlobalPassback_Update_300x250.jpg%22%20width%3D%22300%22%20height%3D%22250%22%3E%3C%2Fa%3E",
+ServerContext:{"fd":{"fraudBotNotification":{"u1v2":"https://cm.g.doubleclick.net/pixel?google_nid=doubleverify_ddp&google_ula=7327243&google_hm=**&google_redir=[ENCODED_REDIRECT_URL]","m3n4":"IMG","k1l2":"100","i9j0":"Doubleclick Bid Manager","s9t0":"https://cm.g.doubleclick.net/pixel?google_nid=doubleverify_ddp&google_ula=7327243&google_cm&google_hm=**","o5p6":"https://cm.g.doubleclick.net/pixel?google_nid=doubleverify_ddp&google_ula=7327243&google_cm&google_hm=**","q7r8":"true","g7h8":"true","e5f6":"true","c3d4":"false"},"researchCollection":{"adid":"-4046522886222050803","d9":"3658259561767602418,-5488740230212662710","d13":"20260916","icat":"false","d12":"false","exti":"3753476526","d2":"0.05","crad":"false","tapt":"12","d14":"","d1":"10","impi":"a42099fc915f48cdbe6106e86e871b6e","dety":"1","d3":"rc20260909","urti":"1025","doha":"-7258372688527317439","d6":""},"common":{"isBsAllow":"false"},"isBsAllow":false},"ce":{"ddt":1,"dt":1}}});}catch(e){}
+try{$dvbs.pubSub.publish("AfterDecisionRender","a42099fc915f48cdbe6106e86e871b6e");}catch(e){}

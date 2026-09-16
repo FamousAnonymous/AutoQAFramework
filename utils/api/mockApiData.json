@@ -1,0 +1,41 @@
+{
+  "employeeIdForGet": 1,
+  "newEmployee": {
+    "firstName": "Olivia",
+    "lastName": "Taylor",
+    "email": "olivia.taylor@company.com",
+    "phone": "+1-555-0110",
+    "department": "Engineering",
+    "position": "QA Automation Engineer",
+    "salary": 81000,
+    "hireDate": "2024-02-12",
+    "status": "active",
+    "address": {
+      "street": "890 Cedar Ave",
+      "city": "Denver",
+      "state": "CO",
+      "zipCode": "80202"
+    }
+  },
+  "putEmployee": {
+    "firstName": "Olivia",
+    "lastName": "Taylor",
+    "email": "olivia.taylor.updated@company.com",
+    "phone": "+1-555-0111",
+    "department": "Engineering",
+    "position": "Senior QA Automation Engineer",
+    "salary": 90000,
+    "hireDate": "2024-02-12",
+    "status": "active",
+    "address": {
+      "street": "890 Cedar Ave",
+      "city": "Denver",
+      "state": "CO",
+      "zipCode": "80202"
+    }
+  },
+  "patchEmployee": {
+    "status": "on_leave",
+    "salary": 85000
+  }
+}
