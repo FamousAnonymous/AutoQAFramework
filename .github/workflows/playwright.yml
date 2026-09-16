@@ -28,6 +28,12 @@ jobs:
       - name: Install Playwright Chrome
         run: npx playwright install --with-deps chrome
 
+      - name: Prepare Ortoni Report
+        run: |
+          mkdir -p html-report
+          npx ortoni-report --help || true
+        continue-on-error: true
+
       - name: Run UI tests
         run: npm run test:ui:qa
         env:
